@@ -1,28 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { getWhatsAppHref } from "@/lib/links";
 import { MobileMenu } from "./MobileMenu";
-
-/** Evita mostrar un enlace de contacto vacío o ajeno a WhatsApp. */
-function getWhatsAppHref(value: string): string | null {
-  if (!value.trim()) return null;
-
-  try {
-    const url = new URL(value);
-    if (
-      url.protocol === "https:" &&
-      ((url.hostname === "wa.me" && /^\/\d+$/.test(url.pathname)) ||
-        (url.hostname === "api.whatsapp.com" &&
-          url.pathname === "/send" &&
-          /^\d+$/.test(url.searchParams.get("phone") ?? "")))
-    ) {
-      return url.href;
-    }
-  } catch {
-    return null;
-  }
-
-  return null;
-}
 
 function NavigationItems() {
   return (
