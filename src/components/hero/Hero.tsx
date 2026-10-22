@@ -3,7 +3,10 @@ import { siteConfig } from "@/config/site";
 import { getWhatsAppHref } from "@/lib/links";
 
 export function Hero() {
-  const whatsappHref = getWhatsAppHref(siteConfig.contact.whatsapp);
+  const whatsappHref = getWhatsAppHref(
+    siteConfig.contact.whatsappNumber,
+    siteConfig.contact.whatsappMessage,
+  );
   const projectsHref = siteConfig.navigation.find(
     (item) => item.id === "projects",
   )?.href;

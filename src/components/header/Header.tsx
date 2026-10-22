@@ -28,7 +28,10 @@ function NavigationItems() {
 }
 
 export function Header() {
-  const whatsappHref = getWhatsAppHref(siteConfig.contact.whatsapp);
+  const whatsappHref = getWhatsAppHref(
+    siteConfig.contact.whatsappNumber,
+    siteConfig.contact.whatsappMessage,
+  );
 
   const whatsappButton = whatsappHref ? (
     <a

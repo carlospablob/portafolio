@@ -47,6 +47,10 @@ export type SiteConfig = {
       description: string;
     }[];
   };
+  contactSection: {
+    title: string;
+    description: string;
+  };
   navigation: readonly {
     id: string;
     label: string;
@@ -63,11 +67,13 @@ export type SiteConfig = {
     contact: string;
     downloadResume: string;
     whatsapp: string;
+    linkedin: string;
   };
   contact: {
     linkedin: string;
     github: string;
-    whatsapp: string;
+    whatsappNumber: string;
+    whatsappMessage: string;
     email: string;
   };
 };
@@ -209,13 +215,18 @@ export const siteConfig = {
       },
     ],
   },
+  contactSection: {
+    title: "¿Tienes un proyecto en mente?",
+    description:
+      "Cuéntame qué necesitas desarrollar, mejorar o resolver. Podemos conversar sobre tu idea y revisar cómo puedo ayudarte.",
+  },
   navigation: [
     { id: "home", label: "Inicio", href: "/" },
     { id: "experience", label: "Experiencia", href: "#experiencia" },
     { id: "projects", label: "Proyectos", href: "#proyectos" },
     { id: "services", label: "Servicios", href: "#servicios" },
     { id: "process", label: "Cómo trabajo", href: "#como-trabajo" },
-    { id: "contact", label: "Contacto", href: "" },
+    { id: "contact", label: "Contacto", href: "#contacto" },
   ],
   header: {
     desktopNavigationLabel: "Navegación principal",
@@ -227,12 +238,14 @@ export const siteConfig = {
     viewProjects: "Ver proyectos",
     contact: "Cuéntame sobre tu proyecto",
     downloadResume: "Descargar CV",
-    whatsapp: "Contactar por WhatsApp",
+    whatsapp: "Hablemos por WhatsApp",
+    linkedin: "Ver perfil profesional",
   },
   contact: {
     linkedin: "",
     github: "",
-    whatsapp: "",
+    whatsappNumber: "",
+    whatsappMessage: "Hola, vi tu portafolio y me gustaría platicar sobre un proyecto.",
     email: "",
   },
 } as const satisfies SiteConfig;
