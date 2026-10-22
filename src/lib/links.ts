@@ -39,3 +39,15 @@ export function getLinkedInHref(value: string): string | null {
 
   return null;
 }
+
+/** Descarta destinos externos vacíos, inseguros o mal formados. */
+export function getExternalProjectHref(value?: string): string | null {
+  if (!value?.trim()) return null;
+
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" ? url.href : null;
+  } catch {
+    return null;
+  }
+}

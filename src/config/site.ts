@@ -20,6 +20,26 @@ export type SiteConfig = {
     }[];
     linkedInLabel: string;
   };
+  projects: {
+    title: string;
+    linkLabel: string;
+    technologiesLabel: string;
+    items: readonly {
+      name: string;
+      category: string;
+      description: string;
+      technologies: readonly string[];
+      url?: string;
+    }[];
+  };
+  services: {
+    title: string;
+    description: string;
+    items: readonly {
+      name: string;
+      description: string;
+    }[];
+  };
   navigation: readonly {
     id: string;
     label: string;
@@ -100,11 +120,68 @@ export const siteConfig = {
     ],
     linkedInLabel: "Ver perfil en LinkedIn",
   },
+  projects: {
+    title: "Proyectos que demuestran mi trabajo",
+    linkLabel: "Ver proyecto",
+    technologiesLabel: "Tecnologías utilizadas",
+    items: [
+      {
+        name: "Amsonia Studio",
+        category: "Sitio web comercial",
+        description:
+          "Desarrollo de un sitio web para una marca de productos digitales, con enfoque en diseño responsive, experiencia de usuario y presentación comercial.",
+        technologies: ["Next.js", "React", "TypeScript"],
+        url: "https://amsoniastudio.com/",
+      },
+      {
+        name: "Developer Tools Suite",
+        category: "Aplicación web",
+        description:
+          "Desarrollo de una plataforma de herramientas digitales orientadas a desarrolladores, utilizando componentes reutilizables e interfaces interactivas.",
+        technologies: ["React", "TypeScript"],
+      },
+      {
+        name: "Farmacia San Pablo",
+        category: "Experiencia profesional en e-commerce",
+        description:
+          "Participación como desarrollador Frontend Senior dentro de un equipo en el desarrollo, mantenimiento y evolución de una plataforma empresarial de comercio electrónico.",
+        technologies: ["Angular", "TypeScript", "Integraciones"],
+        url: "https://www.farmaciasanpablo.com.mx/",
+      },
+    ],
+  },
+  services: {
+    title: "¿En qué puedo ayudarte?",
+    description:
+      "Puedo colaborar contigo en el desarrollo, mejora y mantenimiento de sitios web y aplicaciones, adaptándome a las necesidades de tu proyecto.",
+    items: [
+      {
+        name: "Desarrollo Frontend",
+        description:
+          "Desarrollo y mejora de interfaces, componentes y funcionalidades con React, Angular, Next.js y TypeScript.",
+      },
+      {
+        name: "Sitios web profesionales",
+        description:
+          "Desarrollo de sitios web para negocios y profesionales, adaptables a dispositivos móviles y preparados para producción.",
+      },
+      {
+        name: "Aplicaciones e integraciones",
+        description:
+          "Implementación de funcionalidades Full Stack, APIs e integraciones utilizando Node.js, .NET, PostgreSQL y SQL Server.",
+      },
+      {
+        name: "Soporte y mantenimiento",
+        description:
+          "Corrección de errores, mejoras de rendimiento, actualización de funcionalidades y mantenimiento de aplicaciones existentes.",
+      },
+    ],
+  },
   navigation: [
     { id: "home", label: "Inicio", href: "/" },
     { id: "experience", label: "Experiencia", href: "#experiencia" },
-    { id: "projects", label: "Proyectos", href: "" },
-    { id: "services", label: "Servicios", href: "" },
+    { id: "projects", label: "Proyectos", href: "#proyectos" },
+    { id: "services", label: "Servicios", href: "#servicios" },
     { id: "process", label: "Cómo trabajo", href: "" },
     { id: "contact", label: "Contacto", href: "" },
   ],
