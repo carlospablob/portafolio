@@ -40,6 +40,13 @@ export type SiteConfig = {
       description: string;
     }[];
   };
+  workProcess: {
+    title: string;
+    steps: readonly {
+      title: string;
+      description: string;
+    }[];
+  };
   navigation: readonly {
     id: string;
     label: string;
@@ -177,12 +184,37 @@ export const siteConfig = {
       },
     ],
   },
+  workProcess: {
+    title: "Un proceso claro y transparente.",
+    steps: [
+      {
+        title: "Cuéntame sobre tu proyecto",
+        description:
+          "Conversamos sobre lo que necesitas, tus objetivos y el problema que quieres resolver.",
+      },
+      {
+        title: "Definimos la solución",
+        description:
+          "Analizo los requerimientos y preparo una propuesta con alcance, entregables, tiempos estimados y presupuesto.",
+      },
+      {
+        title: "Desarrollo y seguimiento",
+        description:
+          "Implemento la solución y comparto avances para validar que el proyecto cumpla con lo acordado.",
+      },
+      {
+        title: "Entrega y acompañamiento",
+        description:
+          "Revisamos los resultados, realizo la entrega correspondiente y podemos acordar soporte o mantenimiento posterior.",
+      },
+    ],
+  },
   navigation: [
     { id: "home", label: "Inicio", href: "/" },
     { id: "experience", label: "Experiencia", href: "#experiencia" },
     { id: "projects", label: "Proyectos", href: "#proyectos" },
     { id: "services", label: "Servicios", href: "#servicios" },
-    { id: "process", label: "Cómo trabajo", href: "" },
+    { id: "process", label: "Cómo trabajo", href: "#como-trabajo" },
     { id: "contact", label: "Contacto", href: "" },
   ],
   header: {
