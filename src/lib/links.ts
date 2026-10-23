@@ -8,16 +8,21 @@ export function getWhatsAppHref(
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
-/** Restringe el enlace profesional a un perfil HTTPS de LinkedIn. */
-export function getLinkedInHref(value: string): string | null {
+function getSocialProfileHref(
+  value: string,
+  allowedHosts: readonly string[],
+  profilePath: RegExp,
+): string | null {
   if (!value.trim()) return null;
 
   try {
     const url = new URL(value);
     if (
       url.protocol === "https:" &&
-      ["linkedin.com", "www.linkedin.com"].includes(url.hostname) &&
-      /^\/in\/[^/]+\/?$/.test(url.pathname)
+      !url.username &&
+      !url.password &&
+      allowedHosts.includes(url.hostname) &&
+      profilePath.test(url.pathname)
     ) {
       return url.href;
     }
@@ -26,6 +31,24 @@ export function getLinkedInHref(value: string): string | null {
   }
 
   return null;
+}
+
+/** Restringe el enlace profesional a un perfil HTTPS de LinkedIn. */
+export function getLinkedInHref(value: string): string | null {
+  return getSocialProfileHref(
+    value,
+    ["linkedin.com", "www.linkedin.com"],
+    /^\/in\/[^/]+\/?$/,
+  );
+}
+
+/** Acepta únicamente perfiles HTTPS de GitHub con una ruta de usuario. */
+export function getGitHubHref(value: string): string | null {
+  return getSocialProfileHref(
+    value,
+    ["github.com", "www.github.com"],
+    /^\/[A-Za-z0-9-]+\/?$/,
+  );
 }
 
 /** Descarta destinos externos vacíos, inseguros o mal formados. */

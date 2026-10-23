@@ -51,6 +51,14 @@ export type SiteConfig = {
     title: string;
     description: string;
   };
+  footer: {
+    description: string;
+    navigationLabel: string;
+    profilesLabel: string;
+    linkedInLabel: string;
+    githubLabel: string;
+    copyrightNotice: string;
+  };
   navigation: readonly {
     id: string;
     label: string;
@@ -219,6 +227,14 @@ export const siteConfig = {
     title: "¿Tienes un proyecto en mente?",
     description:
       "Cuéntame qué necesitas desarrollar, mejorar o resolver. Podemos conversar sobre tu idea y revisar cómo puedo ayudarte.",
+  },
+  footer: {
+    description: "Desarrollador Frontend con experiencia Full Stack.",
+    navigationLabel: "Navegación del sitio",
+    profilesLabel: "Perfiles profesionales",
+    linkedInLabel: "LinkedIn",
+    githubLabel: "GitHub",
+    copyrightNotice: "Todos los derechos reservados.",
   },
   navigation: [
     { id: "home", label: "Inicio", href: "/" },
