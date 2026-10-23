@@ -258,10 +258,10 @@ export const siteConfig = {
     linkedin: "Ver perfil profesional",
   },
   contact: {
-    linkedin: "",
-    github: "",
-    whatsappNumber: "",
+    linkedin: "https://linkedin.com/in/carlos-pablo-dev",
+    github: "https://github.com/carlospablob",
+    whatsappNumber: "5544332211",
     whatsappMessage: "Hola, vi tu portafolio y me gustaría platicar sobre un proyecto.",
-    email: "",
+    email: "carlospablo.b@gmail.com",
   },
 } as const satisfies SiteConfig;
