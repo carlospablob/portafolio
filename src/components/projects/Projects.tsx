@@ -31,18 +31,16 @@ export function Projects() {
                 key={name}
                 className="flex min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
               >
-                <div className="border-b border-slate-200 bg-white p-4">
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-slate-200 bg-white">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      sizes="(max-width: 767px) calc(100vw - 80px), (max-width: 1023px) calc((100vw - 104px) / 2), 352px"
-                      className="object-contain object-center"
-                      loading="lazy"
-                      unoptimized
-                    />
-                  </div>
+                <div className="relative aspect-[1920/989] overflow-hidden border-b border-slate-200 bg-white">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 1023px) calc((100vw - 104px) / 2), 384px"
+                    className="object-contain"
+                    loading="lazy"
+                    unoptimized
+                  />
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">

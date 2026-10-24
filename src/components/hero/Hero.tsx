@@ -76,32 +76,28 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-        <div className="ml-auto w-[88%] rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-slate-100 bg-white">
-            <Image
-              src={primaryProject.image.src}
-              alt={primaryProject.image.alt}
-              fill
-              sizes="(max-width: 640px) 78vw, (max-width: 1024px) 440px, 460px"
-              className="object-contain object-center"
-              loading="eager"
-              fetchPriority="high"
-              unoptimized
-            />
-          </div>
+        <div className="relative ml-auto aspect-[1920/989] w-[88%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+          <Image
+            src={primaryProject.image.src}
+            alt={primaryProject.image.alt}
+            fill
+            sizes="(max-width: 640px) 88vw, 454px"
+            className="object-contain"
+            loading="eager"
+            fetchPriority="high"
+            unoptimized
+          />
         </div>
-        <div className="relative -mt-10 w-[62%] rounded-xl border border-slate-200 bg-white p-2.5 shadow-sm sm:-mt-16 sm:p-3">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-slate-100 bg-white">
-            <Image
-              src={secondaryProject.image.src}
-              alt={secondaryProject.image.alt}
-              fill
-              sizes="(max-width: 640px) 55vw, (max-width: 1024px) 310px, 330px"
-              className="object-contain object-center"
-              loading="lazy"
-              unoptimized
-            />
-          </div>
+        <div className="relative -mt-10 aspect-[1920/989] w-[62%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm sm:-mt-16">
+          <Image
+            src={secondaryProject.image.src}
+            alt={secondaryProject.image.alt}
+            fill
+            sizes="(max-width: 640px) 62vw, 320px"
+            className="object-contain"
+            loading="lazy"
+            unoptimized
+          />
         </div>
       </div>
     </section>
