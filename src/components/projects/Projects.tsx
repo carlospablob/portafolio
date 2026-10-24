@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { getExternalProjectHref } from "@/lib/links";
 
@@ -20,7 +21,7 @@ export function Projects() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((project) => {
-            const { name, category, description, technologies } = project;
+            const { name, category, description, technologies, image } = project;
             const projectHref = getExternalProjectHref(
               "url" in project ? project.url : undefined,
             );
@@ -30,18 +31,28 @@ export function Projects() {
                 key={name}
                 className="flex min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
               >
-                <div aria-hidden="true" className="border-b border-slate-200 bg-white p-4">
-                  <div className="aspect-[16/10] rounded-md border border-slate-200 bg-white" />
+                <div className="border-b border-slate-200 bg-white p-4">
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-slate-200 bg-white">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 767px) calc(100vw - 80px), (max-width: 1023px) calc((100vw - 104px) / 2), 352px"
+                      className="object-contain object-center"
+                      loading="lazy"
+                      unoptimized
+                    />
+                  </div>
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="text-primary text-xs font-semibold tracking-wide uppercase">
+                  <p className="text-primary text-sm leading-5 font-semibold">
                     {category}
                   </p>
                   <h3 className="text-navy mt-3 text-xl font-semibold tracking-tight">
                     {name}
                   </h3>
-                  <p className="text-muted mt-4 text-sm leading-7">{description}</p>
+                  <p className="text-muted mt-4 text-base leading-7">{description}</p>
 
                   <ul
                     className="mt-6 flex flex-wrap gap-2"
@@ -50,7 +61,7 @@ export function Projects() {
                     {technologies.map((technology) => (
                       <li
                         key={technology}
-                        className="text-navy rounded-full border border-slate-200 px-3 py-1 text-xs font-medium"
+                        className="text-navy rounded-full border border-slate-200 px-3 py-1 text-sm leading-5 font-medium"
                       >
                         {technology}
                       </li>

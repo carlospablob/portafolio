@@ -30,6 +30,10 @@ export type SiteConfig = {
       description: string;
       technologies: readonly string[];
       url?: string;
+      image: {
+        src: string;
+        alt: string;
+      };
     }[];
   };
   services: {
@@ -153,6 +157,10 @@ export const siteConfig = {
           "Desarrollo de un sitio web para una marca de productos digitales, con enfoque en diseño responsive, experiencia de usuario y presentación comercial.",
         technologies: ["Next.js", "React", "TypeScript"],
         url: "https://amsoniastudio.com/",
+        image: {
+          src: "/projects/amsonina.png",
+          alt: "Página principal de Amsonia Studio con sus productos digitales.",
+        },
       },
       {
         name: "Developer Tools Suite",
@@ -160,6 +168,11 @@ export const siteConfig = {
         description:
           "Desarrollo de una plataforma de herramientas digitales orientadas a desarrolladores, utilizando componentes reutilizables e interfaces interactivas.",
         technologies: ["React", "TypeScript"],
+        url: "https://devtools-7yv.pages.dev/",
+        image: {
+          src: "/projects/devtools.png",
+          alt: "Developer Tools Suite con navegación lateral y herramientas para desarrolladores.",
+        },
       },
       {
         name: "Farmacia San Pablo",
@@ -168,6 +181,10 @@ export const siteConfig = {
           "Participación como desarrollador Frontend Senior dentro de un equipo en el desarrollo, mantenimiento y evolución de una plataforma empresarial de comercio electrónico.",
         technologies: ["Angular", "TypeScript", "Integraciones"],
         url: "https://www.farmaciasanpablo.com.mx/",
+        image: {
+          src: "/projects/sanpablo.png",
+          alt: "Página pública de Farmacia San Pablo con productos destacados.",
+        },
       },
     ],
   },

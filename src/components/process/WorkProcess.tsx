@@ -30,14 +30,14 @@ export function WorkProcess() {
               <li key={stepTitle} className={dividerClasses}>
                 <p
                   aria-hidden="true"
-                  className="text-primary text-sm font-semibold tracking-[0.16em]"
+                  className="text-primary text-base font-semibold tracking-[0.16em]"
                 >
                   {index + 1}
                 </p>
                 <h3 className="text-navy mt-4 text-lg font-semibold tracking-tight sm:text-xl">
                   {stepTitle}
                 </h3>
-                <p className="text-muted mt-3 text-sm leading-7 sm:text-base">
+                <p className="text-muted mt-3 text-base leading-7">
                   {description}
                 </p>
               </li>

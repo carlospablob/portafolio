@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { getWhatsAppHref } from "@/lib/links";
 
@@ -10,6 +11,7 @@ export function Hero() {
   const projectsHref = siteConfig.navigation.find(
     (item) => item.id === "projects",
   )?.href;
+  const [primaryProject, secondaryProject] = siteConfig.projects.items;
 
   return (
     <section
@@ -73,12 +75,33 @@ export function Hero() {
         )}
       </div>
 
-      <div aria-hidden="true" className="relative mx-auto w-full max-w-lg lg:max-w-none">
+      <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
         <div className="ml-auto w-[88%] rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
-          <div className="aspect-[16/10] rounded-lg border border-slate-100 bg-white" />
+          <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-slate-100 bg-white">
+            <Image
+              src={primaryProject.image.src}
+              alt={primaryProject.image.alt}
+              fill
+              sizes="(max-width: 640px) 78vw, (max-width: 1024px) 440px, 460px"
+              className="object-contain object-center"
+              loading="eager"
+              fetchPriority="high"
+              unoptimized
+            />
+          </div>
         </div>
         <div className="relative -mt-10 w-[62%] rounded-xl border border-slate-200 bg-white p-2.5 shadow-sm sm:-mt-16 sm:p-3">
-          <div className="aspect-[16/10] rounded-lg border border-slate-100 bg-white" />
+          <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-slate-100 bg-white">
+            <Image
+              src={secondaryProject.image.src}
+              alt={secondaryProject.image.alt}
+              fill
+              sizes="(max-width: 640px) 55vw, (max-width: 1024px) 310px, 330px"
+              className="object-contain object-center"
+              loading="lazy"
+              unoptimized
+            />
+          </div>
         </div>
       </div>
     </section>

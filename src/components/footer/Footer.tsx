@@ -90,7 +90,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-slate-200">
-        <p className="text-muted mx-auto w-full max-w-7xl px-6 py-5 text-xs sm:px-10">
+        <p className="text-muted mx-auto w-full max-w-7xl px-6 py-5 text-sm sm:px-10">
           © {currentYear} {siteConfig.name}. {copyrightNotice}
         </p>
       </div>

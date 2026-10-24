@@ -36,7 +36,7 @@ export function Services() {
                 <h3 className="text-navy text-lg font-semibold tracking-tight sm:text-xl">
                   {name}
                 </h3>
-                <p className="text-muted mt-3 text-sm leading-7 sm:text-base">
+                <p className="text-muted mt-3 text-base leading-7">
                   {serviceDescription}
                 </p>
               </li>
