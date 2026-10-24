@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { getWhatsAppHref } from "@/lib/links";
+import { HeroEntrance } from "./HeroEntrance";
 
 export function Hero() {
   const whatsappHref = getWhatsAppHref(
@@ -15,29 +16,41 @@ export function Hero() {
 
   return (
     <section
+      data-hero
       aria-labelledby="hero-title"
       className="mx-auto grid w-full max-w-7xl items-center gap-10 px-6 py-12 sm:gap-12 sm:px-10 sm:py-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 lg:py-16"
     >
       <div className="min-w-0 max-w-2xl">
-        <p className="text-primary text-sm font-semibold tracking-[0.16em] uppercase">
+        <p
+          data-hero-enter="fade"
+          className="text-primary text-sm font-semibold tracking-[0.16em] uppercase"
+        >
           {siteConfig.name}
         </p>
-        <p className="text-muted mt-3 text-base leading-relaxed sm:text-lg">
+        <p
+          data-hero-enter="fade"
+          className="text-muted mt-3 text-base leading-relaxed sm:text-lg"
+        >
           {siteConfig.role}
         </p>
 
         <h1
+          data-hero-enter="rise"
           id="hero-title"
           className="text-navy mt-6 text-[clamp(2.125rem,4.8vw,3.5rem)] leading-[1.12] font-semibold tracking-tight"
         >
           {siteConfig.headline}
         </h1>
 
-        <p className="text-muted mt-6 max-w-[60ch] text-base leading-7 sm:text-lg sm:leading-8">
+        <p
+          data-hero-enter="rise"
+          className="text-muted mt-6 max-w-[60ch] text-base leading-7 sm:text-lg sm:leading-8"
+        >
           {siteConfig.description}
         </p>
 
         <ul
+          data-hero-enter="rise"
           aria-label={siteConfig.hero.technologiesLabel}
           className="mt-6 flex flex-wrap gap-2"
         >
@@ -55,6 +68,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {whatsappHref && (
               <a
+                data-hero-enter="rise"
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -65,6 +79,7 @@ export function Hero() {
             )}
             {projectsHref && (
               <Link
+                data-hero-enter="rise"
                 href={projectsHref}
                 className="text-navy hover:text-primary focus-visible:outline-primary inline-flex min-h-11 items-center justify-center rounded-md border border-slate-300 bg-white px-5 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2"
               >
@@ -76,7 +91,10 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-        <div className="relative ml-auto aspect-[1920/989] w-[88%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+        <div
+          data-hero-enter="image"
+          className="relative ml-auto aspect-[1920/989] w-[88%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+        >
           <Image
             src={primaryProject.image.src}
             alt={primaryProject.image.alt}
@@ -88,7 +106,10 @@ export function Hero() {
             unoptimized
           />
         </div>
-        <div className="relative -mt-10 aspect-[1920/989] w-[62%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm sm:-mt-16">
+        <div
+          data-hero-enter="image"
+          className="relative -mt-10 aspect-[1920/989] w-[62%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm sm:-mt-16"
+        >
           <Image
             src={secondaryProject.image.src}
             alt={secondaryProject.image.alt}
@@ -100,6 +121,7 @@ export function Hero() {
           />
         </div>
       </div>
+      <HeroEntrance />
     </section>
   );
 }
