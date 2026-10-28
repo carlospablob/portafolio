@@ -10,13 +10,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
-  description: siteConfig.description,
+  title: siteConfig.seo.title,
+  description: siteConfig.seo.description,
+  openGraph: {
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+    type: "website",
+    locale: "es_MX",
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary",
+    title: siteConfig.seo.title,
+    description: siteConfig.seo.description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${inter.variable} h-full antialiased`}>
+    <html lang="es-MX" className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <Header />
         {children}

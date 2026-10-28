@@ -1,4 +1,9 @@
 export type SiteConfig = {
+  seo: {
+    title: string;
+    description: string;
+    publicUrl: string;
+  };
   name: string;
   monogram: string;
   role: string;
@@ -91,6 +96,12 @@ export type SiteConfig = {
 };
 
 export const siteConfig = {
+  seo: {
+    title: "Carlos Pablo Bautista | Senior Frontend Developer",
+    description:
+      "Desarrollador Frontend especializado en React, Angular y Next.js, con experiencia Full Stack en el desarrollo de sitios web y aplicaciones.",
+    publicUrl: "",
+  },
   name: "Carlos Pablo Bautista",
   monogram: "CPB",
   role: "Senior Frontend Developer · Full Stack Development",
