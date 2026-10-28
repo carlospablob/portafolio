@@ -27,3 +27,50 @@ body {
   color: var(--site-color-text);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-rise-in {
+  from {
+    opacity: 0.55;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-hero-enter] {
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+
+  [data-hero-enter="fade"],
+  [data-hero-enter="image"] {
+    animation-name: hero-fade-in;
+  }
+
+  [data-hero-enter="rise"] {
+    animation-name: hero-rise-in;
+  }
+
+  [data-hero-step="1"] { animation-delay: 0ms; }
+  [data-hero-step="2"] { animation-delay: 70ms; }
+  [data-hero-step="3"] { animation-delay: 140ms; }
+  [data-hero-step="4"] { animation-delay: 210ms; }
+  [data-hero-step="5"] { animation-delay: 280ms; }
+  [data-hero-step="6"] { animation-delay: 350ms; }
+  [data-hero-step="7"] { animation-delay: 420ms; }
+  [data-hero-step="8"] { animation-delay: 240ms; }
+  [data-hero-step="9"] { animation-delay: 340ms; }
+}
