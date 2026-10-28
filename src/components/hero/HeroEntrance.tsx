@@ -19,13 +19,13 @@ export function HeroEntrance() {
       return animate(
         element,
         {
-          opacity: [isImage ? 0.7 : 0.8, 1],
+          opacity: [isImage ? 0.6 : 0.65, 1],
           ...(isFadeOnly
             ? {}
-            : { transform: ["translateY(8px)", "translateY(0)"] }),
+            : { transform: ["translateY(12px)", "translateY(0)"] }),
         },
         {
-          duration: isImage ? 0.55 : 0.45,
+          duration: isImage ? 0.6 : 0.55,
           delay: index * 0.09,
           ease: "easeOut",
         },
