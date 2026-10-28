@@ -20,7 +20,7 @@ export function Projects() {
           {title}
         </h2>
 
-        <div className="mt-12 flex flex-col gap-8 md:gap-10">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((project) => {
             const { name, category, description, technologies, image } = project;
             const projectHref = getExternalProjectHref(
@@ -29,24 +29,24 @@ export function Projects() {
 
             return (
               <div key={name} data-project-enter className="min-w-0">
-                <article className="group grid h-full min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] motion-safe:transition motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-[3px] motion-safe:hover:border-slate-300 motion-safe:hover:shadow-md motion-safe:focus-within:-translate-y-[3px] motion-safe:focus-within:border-slate-300 motion-safe:focus-within:shadow-md">
-                  <div className="relative aspect-[1920/989] overflow-hidden border-b border-slate-200 bg-white lg:self-center lg:border-r lg:border-b-0">
+                <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm motion-safe:transition motion-safe:duration-200 motion-safe:ease-out motion-safe:hover:-translate-y-[3px] motion-safe:hover:border-slate-300 motion-safe:hover:shadow-md motion-safe:focus-within:-translate-y-[3px] motion-safe:focus-within:border-slate-300 motion-safe:focus-within:shadow-md">
+                  <div className="relative aspect-[1920/989] overflow-hidden border-b border-slate-200 bg-white">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      sizes="(max-width: 1023px) calc(100vw - 64px), 640px"
+                      sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 1023px) calc((100vw - 104px) / 2), 384px"
                       className="object-contain motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:scale-[1.02] motion-safe:group-focus-within:scale-[1.02]"
                       loading="lazy"
                       unoptimized
                     />
                   </div>
 
-                  <div className="flex min-w-0 flex-col p-6 sm:p-8 lg:p-10">
+                  <div className="flex flex-1 flex-col p-6">
                     <p className="text-primary text-sm leading-5 font-semibold">
                       {category}
                     </p>
-                    <h3 className="text-navy mt-3 text-2xl leading-tight font-semibold tracking-tight sm:text-3xl">
+                    <h3 className="text-navy mt-3 text-xl font-semibold tracking-tight">
                       {name}
                     </h3>
                     <p className="text-muted mt-4 text-base leading-7">{description}</p>

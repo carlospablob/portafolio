@@ -17,20 +17,20 @@ export function Hero() {
     <section
       data-hero
       aria-labelledby="hero-title"
-      className="mx-auto grid w-full max-w-7xl items-center gap-10 px-6 py-12 sm:gap-12 sm:px-10 sm:py-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-8 lg:py-16"
+      className="mx-auto grid w-full max-w-7xl items-center gap-10 px-6 py-12 sm:gap-12 sm:px-10 sm:py-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 lg:py-16"
     >
       <div className="min-w-0 max-w-2xl">
         <p
           data-hero-enter="fade"
           data-hero-step="1"
-          className="text-navy text-[clamp(1.625rem,2.5vw,2.125rem)] leading-tight font-semibold tracking-tight"
+          className="text-primary text-sm font-semibold tracking-[0.16em] uppercase"
         >
           {siteConfig.name}
         </p>
         <p
           data-hero-enter="fade"
           data-hero-step="2"
-          className="text-primary mt-2 text-base leading-relaxed font-medium sm:text-lg"
+          className="text-muted mt-3 text-base leading-relaxed sm:text-lg"
         >
           {siteConfig.role}
         </p>
@@ -39,7 +39,7 @@ export function Hero() {
           data-hero-enter="rise"
           data-hero-step="3"
           id="hero-title"
-          className="text-navy mt-8 text-[clamp(2.125rem,4.8vw,3.5rem)] leading-[1.12] font-semibold tracking-tight"
+          className="text-navy mt-6 text-[clamp(2.125rem,4.8vw,3.5rem)] leading-[1.12] font-semibold tracking-tight"
         >
           {siteConfig.headline}
         </h1>
@@ -56,7 +56,7 @@ export function Hero() {
           data-hero-enter="rise"
           data-hero-step="5"
           aria-label={siteConfig.hero.technologiesLabel}
-          className="mt-7 flex flex-wrap gap-2 border-t border-slate-200 pt-5"
+          className="mt-6 flex flex-wrap gap-2"
         >
           {siteConfig.technologies.map((technology) => (
             <li
@@ -69,7 +69,7 @@ export function Hero() {
         </ul>
 
         {(whatsappHref || projectsHref) && (
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {whatsappHref && (
               <a
                 data-hero-enter="rise"
@@ -100,13 +100,13 @@ export function Hero() {
         <div
           data-hero-enter="image"
           data-hero-step="8"
-          className="relative ml-auto aspect-[1920/989] w-[94%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+          className="relative ml-auto aspect-[1920/989] w-[88%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
         >
           <Image
             src={primaryProject.image.src}
             alt={primaryProject.image.alt}
             fill
-            sizes="(max-width: 640px) 94vw, 530px"
+            sizes="(max-width: 640px) 88vw, 454px"
             className="object-contain"
             loading="eager"
             fetchPriority="high"
@@ -116,13 +116,13 @@ export function Hero() {
         <div
           data-hero-enter="image"
           data-hero-step="9"
-          className="relative -mt-8 aspect-[1920/989] w-[70%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm sm:-mt-14"
+          className="relative -mt-10 aspect-[1920/989] w-[62%] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm sm:-mt-16"
         >
           <Image
             src={secondaryProject.image.src}
             alt={secondaryProject.image.alt}
             fill
-            sizes="(max-width: 640px) 70vw, 390px"
+            sizes="(max-width: 640px) 62vw, 320px"
             className="object-contain"
             loading="lazy"
             unoptimized
