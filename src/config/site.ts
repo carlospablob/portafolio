@@ -290,8 +290,8 @@ export const siteConfig = {
   contact: {
     linkedin: "https://linkedin.com/in/carlos-pablo-dev",
     github: "https://github.com/carlospablob",
-    whatsappNumber: "5544332211",
+    whatsappNumber: process.env.PHONE ?? "",
     whatsappMessage: "Hola, vi tu portafolio y me gustaría platicar sobre un proyecto.",
-    email: "carlospablo.b@gmail.com",
+    email: process.env.EMAIL ?? "",
   },
 } as const satisfies SiteConfig;
