@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.publicUrl),
   title: siteConfig.seo.title,
   description: siteConfig.seo.description,
+  verification: {
+    google: siteConfig.seo.googleVerification,
+  },
   openGraph: {
     url: siteConfig.seo.publicUrl,
     title: siteConfig.seo.title,

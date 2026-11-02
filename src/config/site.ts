@@ -3,6 +3,7 @@ export type SiteConfig = {
     title: string;
     description: string;
     publicUrl: string;
+    googleVerification: string;
   };
   name: string;
   monogram: string;
@@ -102,6 +103,7 @@ export const siteConfig = {
     description:
       "Desarrollador Frontend especializado en React, Angular y Next.js, con experiencia Full Stack en el desarrollo de sitios web y aplicaciones.",
     publicUrl: "https://carlospb.pages.dev/",
+    googleVerification: "DFBlF7uBav25-hHJmLEiP9aiqoEMAWIfBQfJr-rRUQQ",
   },
   name: "Carlos Pablo Bautista",
   monogram: "CPB",
