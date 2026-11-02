@@ -57,6 +57,7 @@ export function MobileMenu({ children, labels, whatsappButton }: MobileMenuProps
         onClick={(event) => {
           if (event.target instanceof Element && event.target.closest("a[href]")) {
             setIsOpen(false);
+            toggleRef.current?.focus({ preventScroll: true });
           }
         }}
       >

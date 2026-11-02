@@ -76,6 +76,7 @@ export type SiteConfig = {
   header: {
     desktopNavigationLabel: string;
     mobileNavigationLabel: string;
+    skipToContentLabel: string;
     openMenuLabel: string;
     closeMenuLabel: string;
   };
@@ -275,6 +276,7 @@ export const siteConfig = {
   header: {
     desktopNavigationLabel: "Navegación principal",
     mobileNavigationLabel: "Navegación móvil",
+    skipToContentLabel: "Saltar al contenido",
     openMenuLabel: "Abrir menú",
     closeMenuLabel: "Cerrar menú",
   },

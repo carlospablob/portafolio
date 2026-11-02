@@ -12,7 +12,7 @@ function NavigationItems() {
             <Link
               href={href}
               aria-current={id === "home" ? "page" : undefined}
-              className="text-navy hover:text-primary focus-visible:outline-primary block rounded-md px-3 py-2 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="text-navy hover:text-primary focus-visible:outline-primary block rounded-md px-3 py-3 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2"
             >
               {label}
             </Link>
@@ -38,7 +38,7 @@ export function Header() {
       href={whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-primary focus-visible:outline-primary inline-flex min-h-10 items-center justify-center rounded-md px-4 text-sm font-semibold text-white hover:bg-navy focus-visible:outline-2 focus-visible:outline-offset-2"
+      className="bg-primary focus-visible:outline-primary inline-flex min-h-11 items-center justify-center rounded-md px-4 text-sm font-semibold text-white hover:bg-navy focus-visible:outline-2 focus-visible:outline-offset-2"
     >
       {siteConfig.actions.whatsapp}
     </a>

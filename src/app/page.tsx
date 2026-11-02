@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer/Footer";
 export default function Home() {
   return (
     <>
-      <main>
+      <main id="contenido" tabIndex={-1}>
         <Hero />
         <Experience />
         <Projects />
