@@ -170,7 +170,7 @@ export const siteConfig = {
         technologies: ["Next.js", "React", "TypeScript"],
         url: "https://amsoniastudio.com/",
         image: {
-          src: "/projects/amsonina.png",
+          src: "/projects/amsonina.webp",
           alt: "Página principal de Amsonia Studio con sus productos digitales.",
         },
       },
@@ -182,7 +182,7 @@ export const siteConfig = {
         technologies: ["React", "TypeScript"],
         url: "https://devtools-7yv.pages.dev/",
         image: {
-          src: "/projects/devtools.png",
+          src: "/projects/devtools.webp",
           alt: "Developer Tools Suite con navegación lateral y herramientas para desarrolladores.",
         },
       },
@@ -194,7 +194,7 @@ export const siteConfig = {
         technologies: ["Angular", "TypeScript", "Integraciones"],
         url: "https://www.farmaciasanpablo.com.mx/",
         image: {
-          src: "/projects/sanpablo.png",
+          src: "/projects/sanpablo.webp",
           alt: "Página pública de Farmacia San Pablo con productos destacados.",
         },
       },
