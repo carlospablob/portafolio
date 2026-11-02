@@ -10,9 +10,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.seo.publicUrl),
   title: siteConfig.seo.title,
   description: siteConfig.seo.description,
   openGraph: {
+    url: siteConfig.seo.publicUrl,
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
     type: "website",

@@ -101,7 +101,7 @@ export const siteConfig = {
     title: "Carlos Pablo Bautista | Senior Frontend Developer",
     description:
       "Desarrollador Frontend especializado en React, Angular y Next.js, con experiencia Full Stack en el desarrollo de sitios web y aplicaciones.",
-    publicUrl: "",
+    publicUrl: "https://carlospb.pages.dev/",
   },
   name: "Carlos Pablo Bautista",
   monogram: "CPB",
