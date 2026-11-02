@@ -55,10 +55,27 @@ export function MobileMenu({ children, labels, whatsappButton }: MobileMenuProps
         id={menuId}
         className={`${isOpen ? "block" : "hidden"} absolute inset-x-0 top-full z-10 border-b border-slate-200 bg-white px-6 py-4 shadow-sm sm:px-10`}
         onClick={(event) => {
-          if (event.target instanceof Element && event.target.closest("a[href]")) {
-            setIsOpen(false);
-            toggleRef.current?.focus({ preventScroll: true });
+          if (!(event.target instanceof Element)) return;
+
+          const link = event.target.closest<HTMLAnchorElement>("a[href]");
+          if (!link) return;
+
+          setIsOpen(false);
+
+          const href = link.getAttribute("href");
+          const targetId = href?.startsWith("#") ? href.slice(1) : null;
+          const target = targetId ? document.getElementById(targetId) : null;
+
+          if (target) {
+            if (!target.hasAttribute("tabindex")) {
+              target.setAttribute("tabindex", "-1");
+            }
+
+            requestAnimationFrame(() => target.focus({ preventScroll: true }));
+            return;
           }
+
+          toggleRef.current?.focus({ preventScroll: true });
         }}
       >
         <nav aria-label={labels.mobileNavigationLabel}>
