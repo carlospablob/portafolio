@@ -4,6 +4,13 @@ export type SiteConfig = {
     description: string;
     publicUrl: string;
     googleVerification: string;
+    image: {
+      url: string;
+      width: number;
+      height: number;
+      alt: string;
+      type: string;
+    };
   };
   name: string;
   monogram: string;
@@ -104,6 +111,13 @@ export const siteConfig = {
       "Desarrollador Frontend especializado en React, Angular y Next.js, con experiencia Full Stack en el desarrollo de sitios web y aplicaciones.",
     publicUrl: "https://carlospb.pages.dev/",
     googleVerification: "DFBlF7uBav25-hHJmLEiP9aiqoEMAWIfBQfJr-rRUQQ",
+    image: {
+      url: "/og-portfolio.png",
+      width: 1734,
+      height: 907,
+      alt: "Carlos Pablo Bautista, desarrollador Frontend Senior: sitios web y aplicaciones que resuelven necesidades reales.",
+      type: "image/png",
+    },
   },
   name: "Carlos Pablo Bautista",
   monogram: "CPB",
